@@ -1,4 +1,4 @@
-package com.citiesapi.model;
+package com.citiesapi.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
