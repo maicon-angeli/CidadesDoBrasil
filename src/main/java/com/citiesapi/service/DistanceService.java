@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import static java.lang.Math.*;
 
@@ -50,7 +49,7 @@ public class DistanceService {
      * @param city2
      * @return
      */
-    public ResponseEntity  distanceByPointsInMiles(final Long city1, final Long city2) {
+    public Double distanceByPointsInMiles(final Long city1, final Long city2) {
 
         log.info("nativePostgresInMiles({}, {})", city1, city2);
 

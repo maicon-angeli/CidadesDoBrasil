@@ -25,14 +25,14 @@ public class DistanceController {
     public ResponseEntity byPoints(@RequestParam(name = "from") final Long city1,
                                    @RequestParam(name = "to") final Long city2) {
         log.info("byPoints");
-        return service.distanceByPointsInMiles(city1, city2);
+        return ResponseEntity.ok().body(service.distanceByPointsInMiles(city1, city2));
     }
 
     @GetMapping("/by-cube")
     public ResponseEntity byCube(@RequestParam(name = "from") final Long city1,
                          @RequestParam(name = "to") final Long city2) {
         log.info("byCube");
-        return service.distanceByCubeInMeters(city1, city2);
+        return ResponseEntity.ok().body(service.distanceByCubeInMeters(city1, city2));
     }
 
     @GetMapping("/by-math")
@@ -40,6 +40,6 @@ public class DistanceController {
                          @RequestParam(name = "to") final Long city2,
                          @RequestParam final EarthRadius unit) {
         log.info("byMath");
-        return service.distanceUsingMath(city1, city2, unit);
+        return ResponseEntity.ok().body(service.distanceUsingMath(city1, city2, unit)) ;
     }
 }
