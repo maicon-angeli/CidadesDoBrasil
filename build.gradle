@@ -27,6 +27,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation group: 'com.vladmihalcea', name: 'hibernate-types-52',version: '2.14.0'
+    implementation 'org.flywaydb:flyway:core'
 
 
 
