@@ -14,20 +14,22 @@ configurations {
     }
 }
 
+
+
 repositories {
     mavenCentral()
 }
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation group: 'com.vladmihalcea', name: 'hibernate-types-52',version: '2.14.0'
-    implementation 'org.flywaydb:flyway:core'
+    implementation 'org.flywaydb:flyway-core:8.5.4'
 
 
 
