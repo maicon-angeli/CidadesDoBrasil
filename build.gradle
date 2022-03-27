@@ -1,7 +1,10 @@
 plugins {
     id 'org.springframework.boot' version '2.6.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  //  id 'checkstyle'
+    id 'pmd'
     id 'java'
+
 }
 
 group = 'com.citiesapi'
@@ -30,6 +33,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation group: 'com.vladmihalcea', name: 'hibernate-types-52',version: '2.14.0'
     implementation 'org.flywaydb:flyway-core:8.5.4'
+    testImplementation 'com.h2database:h2:1.4.200'
 
 
 
@@ -38,3 +42,10 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+/*
+
+checkstyle {
+    toolVersion "8.31"
+    configFile file("google_checks.xml")
+}
+*/

@@ -8,11 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Point;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static java.lang.Math.*;
 
@@ -21,7 +22,6 @@ public class DistanceService {
     @Autowired
     private CityRepository cityRepository;
     Logger log = LoggerFactory.getLogger(DistanceService.class);
-
 
 
     /**
@@ -102,4 +102,16 @@ public class DistanceService {
         return earthRadius.getValue() * c;
     }
 
-}
+    public List<City> nearby(Long cityId, Double radius) {
+        Optional<City> city = cityRepository.findById(cityId);
+
+        if (city.isPresent()) {
+            Point point = city.get().getLocation();
+
+            return cityRepository.citiesByRadius(point.getX(), point.getY(), radius);
+        }else {
+            return Collections.emptyList();
+        }
+        }
+
+    }

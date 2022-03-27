@@ -20,7 +20,7 @@ public class CityController {
 
 
     @GetMapping
-    public Page<City> countries(Pageable page) {
+    public Page<City> cities(Pageable page) {
 
         return service.getall(page);
     }
