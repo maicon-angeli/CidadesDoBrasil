@@ -33,6 +33,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation group: 'com.vladmihalcea', name: 'hibernate-types-52',version: '2.14.0'
     implementation 'org.flywaydb:flyway-core:8.5.4'
+    testImplementation('org.springframework.boot:spring-boot-stater-test'){
+        exclude group: 'org.junit.vintage',module:'junit-vintage-engine'
+    }
     testImplementation 'com.h2database:h2:1.4.200'
 
 
